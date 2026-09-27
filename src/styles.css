@@ -19,6 +19,7 @@
  */
 
 @theme inline {
+  --font-sans: "Outfit", ui-sans-serif, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -59,6 +60,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-signal: var(--signal);
+  --color-signal-foreground: var(--signal-foreground);
+  --color-canvas: var(--canvas);
+  --color-mint: var(--mint);
+  --color-grocery: var(--grocery);
+  --color-food: var(--food);
+  --color-services: var(--services);
 }
 
 :root {
@@ -95,6 +103,16 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --signal: oklch(0.61 0.24 27);
+  --signal-foreground: oklch(0.99 0 0);
+  --canvas: oklch(0.985 0.004 155);
+  --mint: oklch(0.94 0.045 157);
+  --grocery: oklch(0.39 0.13 145);
+  --food: oklch(0.63 0.2 26);
+  --services: oklch(0.43 0.1 253);
+  --shadow-card: 0 10px 30px color-mix(in oklab, var(--foreground) 8%, transparent);
+  --shadow-device: 0 20px 35px color-mix(in oklab, var(--foreground) 24%, transparent);
+  --shadow-button: 0 7px 18px color-mix(in oklab, var(--primary) 22%, transparent);
 }
 
 .dark {
@@ -140,5 +158,24 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    letter-spacing: 0;
   }
+}
+
+@utility solution-shadow {
+  box-shadow: var(--shadow-card);
+}
+
+@utility device-shadow {
+  box-shadow: var(--shadow-device);
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise-in { animation: rise-in 650ms ease-out both; }
 }
