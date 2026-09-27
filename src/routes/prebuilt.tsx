@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
-  BadgeCheck,
-  Boxes,
   Check,
-  ChevronRight,
   Headset,
   Layers3,
-  Menu,
   MessageCircle,
   PackageOpen,
   ShieldCheck,
   Sparkles,
-  X,
   Zap,
 } from "lucide-react";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/prebuilt")({
@@ -69,27 +63,11 @@ const products = [
   },
 ] as const;
 
-function Brand() {
-  return (
-    <a href="#top" className="flex items-center gap-2" aria-label="Anni home">
-      <span className="relative grid h-9 w-9 place-items-center" aria-hidden="true">
-        <span className="absolute h-8 w-2 -rotate-[21deg] rounded-sm bg-primary" />
-        <span className="absolute ml-5 h-8 w-2 rotate-[21deg] rounded-sm bg-primary" />
-        <span className="absolute ml-2 mt-2 h-2.5 w-2.5 rounded-full bg-grocery" />
-      </span>
-      <span className="leading-none">
-        <span className="block text-[22px] font-extrabold text-foreground">Anni</span>
-        <span className="block text-[7px] font-semibold text-muted-foreground">WEB SOLUTIONS PVT. LTD.</span>
-      </span>
-    </a>
-  );
-}
-
 function DeviceArtwork({ tone = "grocery", compact = false }: { tone?: "grocery" | "food" | "services"; compact?: boolean }) {
   const bg = tone === "grocery" ? "bg-grocery" : tone === "food" ? "bg-food" : "bg-services";
   const accent = tone === "food" ? "bg-signal" : "bg-primary";
   return (
-    <div className={`relative ${compact ? "h-44 sm:h-full" : "h-[240px] lg:h-[280px]"}`} aria-hidden="true">
+    <div className={`relative ${compact ? "h-44 sm:h-full" : "h-[224px] sm:h-[245px] lg:h-[258px]"}`} aria-hidden="true">
       <div className={`absolute inset-x-[8%] bottom-1 top-4 overflow-hidden rounded-md ${bg}`}>
         <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,var(--color-background)_0_2px,transparent_3px)] [background-size:34px_34px]" />
       </div>
@@ -160,43 +138,18 @@ function ProductCard({ product, index }: { product: (typeof products)[number]; i
 }
 
 function PrebuiltPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <main id="top" className="min-h-screen bg-canvas text-foreground">
-      <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-        <div className="mx-auto grid h-[74px] max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:px-8 lg:grid-cols-[220px_minmax(0,1fr)_auto] lg:px-12">
-          <Brand />
-          <nav className="hidden min-w-0 items-center justify-center gap-7 text-sm font-medium lg:flex" aria-label="Main navigation">
-            <a className="border-b-2 border-primary py-[27px] font-semibold" href="#products">Prebuilt</a>
-            <a className="hover:text-primary" href="#products">Customized</a>
-            <a className="hover:text-primary" href="#products">AI Automation</a>
-            <a className="hover:text-primary" href="#products">Digital Growth</a>
-            <a className="hover:text-primary" href="#products">Pricing</a>
-            <a className="hover:text-primary" href="mailto:hello@anni.example">Contact Us</a>
-          </nav>
-          <Button className="hidden lg:inline-flex" variant="hero" asChild><a href="mailto:hello@anni.example">Get a Free Quote <ArrowRight /></a></Button>
-          <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Close menu" : "Open menu"}>
-            {menuOpen ? <X /> : <Menu />}
-          </Button>
-        </div>
-        {menuOpen && (
-          <nav className="grid border-t border-border bg-background px-5 py-3 text-sm font-semibold lg:hidden" aria-label="Mobile navigation">
-            {['Prebuilt', 'Customized', 'AI Automation', 'Digital Growth', 'Pricing'].map((item) => <a key={item} href="#products" className="border-b border-border py-3" onClick={() => setMenuOpen(false)}>{item}</a>)}
-            <a href="mailto:hello@anni.example" className="py-3 text-primary">Contact Us</a>
-          </nav>
-        )}
-      </header>
-
       <section className="relative overflow-hidden border-b border-border bg-background">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,var(--mint),transparent_37%)]" />
-        <div className="rise-in relative mx-auto grid max-w-[1440px] items-center gap-2 px-5 pb-0 pt-8 sm:px-8 lg:grid-cols-[44%_56%] lg:px-12 lg:pt-10">
-          <div className="z-10 pb-2 lg:pb-12">
+        <div className="rise-in relative mx-auto grid max-w-[1440px] items-center gap-2 px-5 pb-0 pt-6 sm:px-8 lg:grid-cols-[43%_57%] lg:px-12 lg:pt-7">
+          <div className="z-10 pb-2 lg:pb-7">
             <span className="inline-flex items-center gap-1 rounded-full bg-mint px-3 py-1 text-xs font-semibold text-grocery"><Sparkles className="size-3" /> Prebuilt Solutions</span>
-            <h1 className="mt-4 max-w-[620px] text-[40px] font-extrabold leading-[0.94] sm:text-6xl lg:text-[66px]">
+            <h1 className="mt-3 max-w-[620px] text-[40px] font-extrabold leading-[0.96] sm:text-[52px] lg:text-[54px]">
               Ready-to-Launch<br /><span className="text-grocery">SaaS</span> Products
             </h1>
-            <p className="mt-5 max-w-[570px] text-[15px] leading-6 text-muted-foreground sm:text-lg">Powerful, industry-ready software solutions to help you start faster, reduce development time, and grow your business with confidence.</p>
-            <div className="mt-5 flex gap-2 sm:gap-3">
+            <p className="mt-3 max-w-[570px] text-[14px] leading-[1.42] text-muted-foreground sm:text-[15px]">Powerful, industry-ready software solutions to help you start faster, reduce development time, and grow your business with confidence.</p>
+            <div className="mt-4 flex gap-2 sm:gap-3">
               <Button variant="hero" asChild><a href="#products">Explore Products <ArrowRight /></a></Button>
               <Button variant="ink" asChild><a href="mailto:hello@anni.example"><MessageCircle /> Talk to Our Team</a></Button>
             </div>
@@ -207,7 +160,7 @@ function PrebuiltPage() {
             <div className="absolute bottom-8 right-0 hidden max-w-36 -rotate-6 rounded-lg bg-background p-3 text-sm font-semibold shadow-lg sm:block"><Sparkles className="mb-1 text-grocery" /> Ideas into Ready-Made Solutions</div>
           </div>
         </div>
-        <div className="relative mx-auto grid max-w-[1440px] grid-cols-4 gap-2 border-t border-border px-5 py-4 sm:px-8 lg:px-12">
+        <div className="relative mx-auto grid max-w-[1440px] grid-cols-4 gap-2 border-t border-border px-5 py-3 sm:px-8 lg:px-12">
           {benefits.map(({ icon: Icon, top, bottom }) => (
             <div key={top} className="flex min-w-0 items-center justify-center gap-2 text-center sm:text-left">
               <Icon className="size-6 shrink-0" strokeWidth={2.2} />
