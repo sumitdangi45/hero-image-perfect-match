@@ -164,9 +164,9 @@ function PrebuiltPage() {
   return (
     <main id="top" className="min-h-screen bg-canvas text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-        <div className="mx-auto grid h-[74px] max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto grid h-[74px] max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:px-8 lg:grid-cols-[220px_minmax(0,1fr)_auto] lg:px-12">
           <Brand />
-          <nav className="hidden items-center gap-8 text-sm font-medium lg:flex" aria-label="Main navigation">
+          <nav className="hidden min-w-0 items-center justify-center gap-7 text-sm font-medium lg:flex" aria-label="Main navigation">
             <a className="border-b-2 border-primary py-[27px] font-semibold" href="#products">Prebuilt</a>
             <a className="hover:text-primary" href="#products">Customized</a>
             <a className="hover:text-primary" href="#products">AI Automation</a>
