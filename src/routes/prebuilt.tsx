@@ -1,16 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
+  BadgeCheck,
   Check,
   Headset,
   Layers3,
   MessageCircle,
-  PackageOpen,
+  Phone,
+  Quote,
+  Rocket,
   ShieldCheck,
   Sparkles,
+  Star,
+  TrendingUp,
+  Wallet,
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import avatarRahul from "@/assets/avatar-rahul.jpg";
+import avatarPriya from "@/assets/avatar-priya.jpg";
+import avatarAmit from "@/assets/avatar-amit.jpg";
 
 export const Route = createFileRoute("/prebuilt")({
   head: () => ({
