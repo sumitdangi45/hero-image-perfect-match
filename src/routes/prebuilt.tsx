@@ -219,8 +219,135 @@ function PrebuiltPage() {
         {products.map((product, index) => <ProductCard key={product.number} product={product} index={index} />)}
       </section>
 
-      <footer className="border-t border-border bg-background py-8 text-center text-sm text-muted-foreground">
-        <PackageOpen className="mx-auto mb-2 size-5 text-grocery" /> Ready to launch your next product?
+      {/* Why Choose Prebuilt */}
+      <section className="border-t border-border bg-background">
+        <div className="mx-auto max-w-[1440px] px-5 py-10 text-center sm:px-8 lg:px-12 lg:py-14">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-mint px-3.5 py-1.5 text-xs font-semibold text-grocery">
+            <Sparkles className="size-3.5" /> Why Choose Prebuilt
+          </span>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[42px] lg:leading-[1.05]">
+            Launch Faster. <span className="text-grocery">Grow Smarter.</span>
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground sm:text-[15px]">
+            Everything you need to start your digital business — without the wait, the risk, or the heavy price tag.
+          </p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {whyCards.map(({ icon: Icon, title, copy }, i) => (
+              <div
+                key={title}
+                className={`solution-shadow rounded-lg border border-border bg-canvas p-6 text-left ${i === 4 ? "sm:col-span-2 lg:col-span-1" : ""}`}
+              >
+                <span className="grid size-11 place-items-center rounded-lg bg-mint text-grocery">
+                  <Icon className="size-5" strokeWidth={2.2} />
+                </span>
+                <h3 className="mt-4 text-base font-bold sm:text-lg">{title}</h3>
+                <p className="mt-1.5 text-[13px] leading-5 text-muted-foreground">{copy}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid grid-cols-2 gap-y-6 rounded-lg border border-border bg-canvas px-4 py-6 sm:grid-cols-4">
+            {stats.map(({ value, label }) => (
+              <div key={label} className="text-center">
+                <div className="text-3xl font-extrabold text-grocery sm:text-4xl">{value}</div>
+                <div className="mt-1 text-xs font-medium text-muted-foreground sm:text-sm">{label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 lg:px-12 lg:py-14">
+          <div className="text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-mint px-3.5 py-1.5 text-xs font-semibold text-grocery">
+              <Quote className="size-3.5" /> Client Stories
+            </span>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[42px] lg:leading-[1.05]">
+              Trusted by <span className="text-grocery">Growing Businesses</span>
+            </h2>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {testimonials.map(({ name, role, avatar, quote }) => (
+              <figure key={name} className="solution-shadow flex flex-col rounded-lg border border-border bg-background p-6">
+                <div className="flex gap-0.5 text-grocery">
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    <Star key={n} className="size-4 fill-current" />
+                  ))}
+                </div>
+                <blockquote className="mt-3 flex-1 text-[13px] leading-6 text-muted-foreground">“{quote}”</blockquote>
+                <figcaption className="mt-5 flex items-center gap-3 border-t border-border pt-4">
+                  <img src={avatar} alt={name} className="size-11 rounded-full object-cover" />
+                  <div>
+                    <div className="text-sm font-bold">{name}</div>
+                    <div className="text-xs text-muted-foreground">{role}</div>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA banner */}
+      <section className="px-3 pb-10 sm:px-8 lg:px-12">
+        <div className="relative mx-auto max-w-[1440px] overflow-hidden rounded-xl bg-grocery px-6 py-12 text-center text-primary-foreground sm:py-16">
+          <div className="absolute inset-0 opacity-15 [background-image:radial-gradient(circle_at_15%_25%,var(--color-background)_0_2px,transparent_3px)] [background-size:36px_36px]" />
+          <div className="relative">
+            <TrendingUp className="mx-auto mb-4 size-8" />
+            <h2 className="mx-auto max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">
+              Let’s Build Your Success Together
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-primary-foreground/85 sm:text-[15px]">
+              Tell us your idea — we’ll match you with the right prebuilt solution and get you live in days.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Button variant="ink" asChild><a href="mailto:hello@anni.example"><MessageCircle /> Get a Free Quote</a></Button>
+              <Button variant="heroOutline" asChild><a href="tel:+919999999999"><Phone /> Call Our Team</a></Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border bg-background">
+        <div className="mx-auto grid max-w-[1440px] gap-8 px-5 py-10 sm:grid-cols-2 sm:px-8 lg:grid-cols-4 lg:px-12">
+          <div>
+            <div className="text-lg font-extrabold">Anni <span className="text-grocery">Web Solutions</span></div>
+            <p className="mt-2 text-[13px] leading-5 text-muted-foreground">
+              Ready-to-launch SaaS products that help businesses start faster and grow smarter.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-sm font-bold">Solutions</h4>
+            <ul className="mt-3 space-y-2 text-[13px] text-muted-foreground">
+              <li>Grocery Delivery</li>
+              <li>Food Delivery</li>
+              <li>On-Demand Services</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-sm font-bold">Company</h4>
+            <ul className="mt-3 space-y-2 text-[13px] text-muted-foreground">
+              <li>About Us</li>
+              <li>Pricing</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-sm font-bold">Get in Touch</h4>
+            <ul className="mt-3 space-y-2 text-[13px] text-muted-foreground">
+              <li>hello@anni.example</li>
+              <li>+91 99999 99999</li>
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-border py-4 text-center text-xs text-muted-foreground">
+          © 2026 Anni Web Solutions. All rights reserved.
+        </div>
       </footer>
     </main>
   );
