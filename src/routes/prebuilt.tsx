@@ -72,6 +72,42 @@ const products = [
   },
 ] as const;
 
+const whyCards = [
+  { icon: Rocket, title: "Launch in Days, Not Months", copy: "Skip the long development cycle. Our ready-made products go live in days with your branding." },
+  { icon: Wallet, title: "Save Up to 70% Cost", copy: "No need to build from scratch. Get enterprise-grade software at a fraction of custom development cost." },
+  { icon: BadgeCheck, title: "Battle-Tested Products", copy: "Every solution is refined through real-world deployments, so you start with a proven foundation." },
+  { icon: Layers3, title: "Fully Customizable", copy: "Your brand, your rules. White-label everything — colors, logo, features, and workflows." },
+  { icon: Headset, title: "Dedicated Support", copy: "From setup to scaling, our team stays with you at every step of your growth journey." },
+];
+
+const stats = [
+  { value: "10+", label: "Ready Products" },
+  { value: "500+", label: "Happy Clients" },
+  { value: "99%", label: "Uptime Guarantee" },
+  { value: "3x", label: "Faster Launch" },
+];
+
+const testimonials = [
+  {
+    name: "Rahul Sharma",
+    role: "Founder, FreshKart Grocery",
+    avatar: avatarRahul,
+    quote: "We launched our grocery app in just 12 days. The prebuilt solution saved us months of development and the support team was incredible throughout.",
+  },
+  {
+    name: "Priya Mehta",
+    role: "CEO, QuickBites Delivery",
+    avatar: avatarPriya,
+    quote: "The food delivery system came with everything we needed — customer app, restaurant panel, and delivery tracking. Our orders grew 3x in the first quarter.",
+  },
+  {
+    name: "Amit Verma",
+    role: "Director, UrbanServe",
+    avatar: avatarAmit,
+    quote: "Fully white-labeled and customized to our brand. It felt like a product built just for us, at a fraction of the cost of custom development.",
+  },
+];
+
 function DeviceArtwork({ tone = "grocery", compact = false }: { tone?: "grocery" | "food" | "services"; compact?: boolean }) {
   const bg = tone === "grocery" ? "bg-grocery" : tone === "food" ? "bg-food" : "bg-services";
   const accent = tone === "food" ? "bg-signal" : "bg-primary";
