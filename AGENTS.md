@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep `/prebuilt` as a self-contained catalogue route using semantic design tokens, because it has a distinct visual system and responsive composition.
+- Home (`/`) theme tokens are scoped under `.home-page` in src/styles.css, so they never override `/prebuilt` tokens.

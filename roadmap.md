@@ -4,3 +4,4 @@
 - [x] Add responsive launch and product catalogue layouts.
 - [x] Verify desktop/mobile rendering and preview health.
 - [x] Add sections below products: Why Choose Prebuilt (5 cards + stats strip), client testimonials, green CTA banner, footer.
+- [x] Copy home page from GitHub repo to `/`.
